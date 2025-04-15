@@ -27,7 +27,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   network_interface_ids = [
     azurerm_network_interface.nic.id
   ]
-  admin_password                  = "MySuperSecurePassword123!" # Use Key Vault in prod!
+  admin_password                  = "MySuperSecurePassword123!" 
   disable_password_authentication = false
   os_disk {
     caching              = "ReadWrite"
@@ -54,12 +54,12 @@ resource "azurerm_network_interface" "nic" {
 }
 
 resource "azurerm_mssql_server" "sql" {
-  name                         = "opella-sqlserver"
+  name                         = "opella-dev-sqlserver"
   resource_group_name          = azurerm_resource_group.rg.name
   location                     = azurerm_resource_group.rg.location
   version                      = "12.0"
   administrator_login          = "4dm1n157r470r"
-  administrator_login_password = "4-v3ry-53cr37-p455w0rd" # ❗ Secure with Key Vault in prod
+  administrator_login_password = "4-v3ry-53cr37-p455w0rd" 
 
   tags = {
     environment = "dev"
@@ -68,7 +68,7 @@ resource "azurerm_mssql_server" "sql" {
 }
 
 resource "azurerm_mssql_database" "db" {
-  name         = "opella-db"
+  name         = "opella-dev-db"
   server_id    = azurerm_mssql_server.sql.id
   collation    = "SQL_Latin1_General_CP1_CI_AS"
   license_type = "LicenseIncluded"
