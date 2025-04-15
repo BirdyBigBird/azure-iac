@@ -1,6 +1,6 @@
 vnet_name           = "prod-vnet"
 address_space       = ["10.1.0.0/16"]
-location            = "ukwest"
+location            = "westeurope"
 resource_group_name = "rg-prod"
 tags = {
   environment = "prod"

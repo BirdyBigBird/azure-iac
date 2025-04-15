@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_linux_virtual_machine" "vm" {
-  name                = "dev-vm"
+  name                = "prod-vm"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   size                = "Standard_B1s"
@@ -72,7 +72,7 @@ resource "azurerm_mssql_database" "db" {
   collation    = "SQL_Latin1_General_CP1_CI_AS"
   license_type = "LicenseIncluded"
   max_size_gb  = 2
-  sku_name     = "S0"
+  sku_name     = "basic"
   enclave_type = "VBS"
 
   tags = {
