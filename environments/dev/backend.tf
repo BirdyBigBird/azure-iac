@@ -4,5 +4,5 @@ terraform {
     storage_account_name = "terraformstate1904"
     container_name       = "tfstate"
     key                  = "dev.terraform.tfstate"
- }
+  }
 }

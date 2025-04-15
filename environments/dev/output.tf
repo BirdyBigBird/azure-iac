@@ -10,5 +10,5 @@ output "subnet_id" {
 
 output "resource_group_name" {
   description = "The name of the resource group"
-  value = module.vnet.resource_group_name
+  value       = module.vnet.resource_group_name
 }
