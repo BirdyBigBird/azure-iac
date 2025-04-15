@@ -1,7 +1,7 @@
 vnet_name           = "prod-vnet"
 address_space       = ["10.1.0.0/16"]
 location            = "ukwest"
-resource_group_name = "rg-dev"
+resource_group_name = "rg-prod"
 tags = {
   environment = "prod"
   project     = "opella"
